@@ -1,0 +1,12 @@
+{
+    "path_checkpoints": "/workspace/fooocus/models/checkpoints",
+    "path_loras": "/workspace/fooocus/models/loras",
+    "path_embeddings": "/workspace/fooocus/models/embeddings",
+    "path_vae_approx": "/workspace/fooocus/models/vae_approx",
+    "path_upscale_models": "/workspace/fooocus/models/upscale_models",
+    "path_inpaint": "/workspace/fooocus/models/inpaint",
+    "path_controlnet": "/workspace/fooocus/models/controlnet",
+    "path_clip_vision": "/workspace/fooocus/models/clip_vision",
+    "path_fooocus_expansion": "/workspace/fooocus/models/prompt_expansion/fooocus_expansion",
+    "path_outputs": "/workspace/fooocus/outputs"
+}
