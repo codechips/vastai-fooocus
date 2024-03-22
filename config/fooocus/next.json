@@ -13,11 +13,11 @@
   "default_sample_sharpness": 2.0,
   "default_sampler": "dpmpp_2m_sde_gpu",
   "default_scheduler": "karras",
-  "default_performance": "Speed",
+  "default_performance": "Quality",
   "default_prompt": "",
   "default_prompt_negative": "",
   "default_styles": ["Fooocus V2", "Fooocus Enhance", "Fooocus Sharp"],
-  "default_aspect_ratio": "1152*896",
+  "default_aspect_ratio": "1024*1024",
   "checkpoint_downloads": {
     "JuggernautXL_v9_RunDiffusionPhoto_v2.safetensors": "https://huggingface.co/RunDiffusion/Juggernaut-XL-v9/resolve/main/Juggernaut-XL_v9_RunDiffusionPhoto_v2.safetensors"
   },

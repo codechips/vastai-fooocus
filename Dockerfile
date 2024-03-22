@@ -1,12 +1,11 @@
 # Stage 1: Base
-FROM nvidia/cuda:12.3.1-base-ubuntu22.04 as base
+FROM nvidia/cuda:12.2.2-base-ubuntu22.04 as base
 
-ARG FOOOCUS_VERSION=2.2.1
+ARG FOOOCUS_VERSION=2.3.0
 
 ENV DEBIAN_FRONTEND=noninteractive \
     PIP_NO_CACHE_DIR=on \
-    SHELL=/bin/bash \
-    LOGIN_PASSWORD=M3GATIVE 
+    SHELL=/bin/bash
 
 USER root
 
@@ -27,6 +26,10 @@ RUN apt update \
 # Stage 2: Install SD tools
 FROM base as setup
 
+WORKDIR /root
+
+COPY config/tmux.conf .tmux.conf
+
 WORKDIR /workspace
 
 RUN git clone https://github.com/lllyasviel/Fooocus.git fooocus \
@@ -40,16 +43,14 @@ WORKDIR /workspace/fooocus
 COPY config/fooocus/auth.json auth.json
 COPY config/fooocus/next.json presets/next.json
 
-RUN sed -i "s/replaceme/${LOGIN_PASSWORD}/g" auth.json
-
 # install filebrower
 RUN curl -fsSL https://raw.githubusercontent.com/filebrowser/get/master/get.sh | bash
 
 COPY config/filebrowser/filebrowser.json /root/.filebrowser.json
 
-RUN filebrowser config init && filebrowser users add admin ${LOGIN_PASSWORD} --perm.admin
+RUN filebrowser config init && filebrowser users add admin replaceme --perm.admin
 
-WORKDIR /root
+WORKDIR /opt/bin
 
 COPY scripts/run.sh run.sh
 

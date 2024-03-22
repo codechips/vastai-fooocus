@@ -4,6 +4,10 @@ function start_fooocus() {
 	mkdir -p /workspace/logs
 	cd /workspace/fooocus
 
+	if [[ ${LOGIN_PASSWORD} ]]; then
+		sed -i "s/replaceme/${LOGIN_PASSWORD}/g" auth.json
+	fi
+
 	if [[ ${FOOOCUS_PRESET} ]]; then
 		echo "fooocus: starting with preset ${FOOOCUS_PRESET}"
 		nohup python entry_with_update.py --listen --port 3000 --preset ${FOOOCUS_PRESET} >/workspace/logs/fooocus.log 2>&1 &
