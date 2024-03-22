@@ -20,7 +20,9 @@ Click on the [template link](https://cloud.vast.ai/?ref_id=118093&creator_id=118
 
 ### 2. Edit the template
 
-Both Fooocus and Filebrowser are protected by credentials by default. The username for both is `admin`.
+![Vast.ai template view](screenshots/vastai-fooocus-template.jpg?raw=true "Vast.ai template view")
+
+Both Fooocus and Filebrowser are protected by credentials by default. The username is `admin`.
 
 Make sure to change your password in template by editing `LOGIN_PASSWORD` environment variable passed to Docker on start!
 
@@ -44,9 +46,13 @@ The Docker image is large (7GB) so it will take around 7-8 minutes to start the 
 
 ### 4. Login to Fooocus and Filebrowser
 
+![Vast.ai instance view](screenshots/vastai-fooocus-instance.jpg?raw=true "Vast.ai instance view")
+
 When the instance is up (when you see **\>\_CONNECT** button) click on the instance IP address on the top and check what ports 3000 and 4000 are mapped to.
 
 Filebrowser listens on port 4000 and Fooocus on port 3000.
+
+![Vast.ai instance ports](screenshots/vastai-fooocus-ports.jpg?raw=true "Vast.ai instance ports")
 
 Copy the instance IP together with the port and paste it into your browser.
 
@@ -62,10 +68,7 @@ When you are done with you work you can either destroy or stop the instance (so 
 
 ### Screenshots
 
-![Vast.ai template view](screenshots/vastai-fooocus-template.jpg?raw=true "Vast.ai template view")
 ![Filebrowser](screenshots/vastai-fooocus-filebrowser.jpg?raw=true "Filebrowser running on the instance")
-![Vast.ai instance view](screenshots/vastai-fooocus-instance.jpg?raw=true "Vast.ai instance view")
-![Vast.ai instance ports](screenshots/vastai-fooocus-ports.jpg?raw=true "Vast.ai instance ports")
 
 ## FAQ
 
